@@ -1,0 +1,39 @@
+## This file is a general .ucf for Nexys3 rev B board
+## To use it in a project:
+## - remove or comment the lines corresponding to unused pins
+## - rename the used signals according to the project
+
+## Clock signal
+NET "clk"            LOC = "V10" | IOSTANDARD = "LVCMOS33";   #Bank = 2, pin name = IO_L30N_GCLK0_USERCCLK,            Sch name = GCLK
+Net "clk" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;
+
+## Switches
+NET "fpga_in<0>"          LOC = "T10" | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L29N_GCLK2,                     Sch name = SW0
+NET "fpga_in<1>"          LOC = "T9"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L32P_GCLK29,                    Sch name = SW1
+NET "fpga_in<2>"          LOC = "V9"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L32N_GCLK28,                    Sch name = SW2
+NET "fpga_in<3>"          LOC = "M8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L40P,                           Sch name = SW3
+NET "fpga_in<4>"          LOC = "N8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L40N,                           Sch name = SW4
+NET "fpga_in<5>"          LOC = "U8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L41P,                           Sch name = SW5
+NET "fpga_in<6>"          LOC = "V8"  | IOSTANDARD = "LVCMOS33";   #Bank = 2, Pin name = IO_L41N_VREF,                      Sch name = SW6
+NET "fpga_in<7>"          LOC = "T5"  | IOSTANDARD = "LVCMOS33";   #Bank = MISC, Pin name = IO_L48N_RDWR_B_VREF_2,          Sch name = SW7
+
+
+## Buttons
+NET "reset"         LOC = "B8"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L33P,                           Sch name = BTNS
+NET "fpga_in<8>"         LOC = "A8"  | IOSTANDARD = "LVCMOS33";   #Bank = 0, Pin name = IO_L33N,                           Sch name = BTNU
+
+## VGA Connector
+NET "fpga_out<7>"      LOC = "U7"  | IOSTANDARD = "LVCMOS33";   # Bank = 2, Pin name = IO_L43P,                          Sch name = RED0
+NET "fpga_out<8>"      LOC = "V7"  | IOSTANDARD = "LVCMOS33";   # Bank = 2, Pin name = IO_L43N,                          Sch name = RED1
+NET "fpga_out<9>"      LOC = "N7"  | IOSTANDARD = "LVCMOS33";   # Bank = 2, Pin name = IO_L44P,                          Sch name = RED2
+NET "fpga_out<4>"    LOC = "P8"  | IOSTANDARD = "LVCMOS33";   # Bank = 2, Pin name = IO_L44N,                          Sch name = GRN0
+NET "fpga_out<5>"    LOC = "T6"  | IOSTANDARD = "LVCMOS33";   # Bank = 2, Pin name = IO_L45P,                          Sch name = GRN1
+NET "fpga_out<6>"    LOC = "V6"  | IOSTANDARD = "LVCMOS33";   # Bank = 2, Pin name = IO_L45N,                          Sch name = GRN2
+NET "fpga_out<2>"     LOC = "R7"  | IOSTANDARD = "LVCMOS33";   # Bank = 2, Pin name = IO_L46P,                          Sch name = BLU1
+NET "fpga_out<3>"     LOC = "T7"  | IOSTANDARD = "LVCMOS33";   # Bank = 2, Pin name = IO_L46N,                          Sch name = BLU2
+
+NET "fpga_out<1>"          LOC = "N6"  | IOSTANDARD = "LVCMOS33";   # Bank = 2, Pin name = IO_L47P,                          Sch name = HSYNC
+NET "fpga_out<0>"          LOC = "P7"  | IOSTANDARD = "LVCMOS33";   # Bank = 2, Pin name = IO_L47N,                          Sch name = VSYNC
+
+

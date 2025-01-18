@@ -1,2 +1,2 @@
 # RISC-microprocessor
-A Verilog RTL of 8-bit, pipeline based RISC processor
+A Verilog RTL of RISC processor with data and branch hazard correction pipeline
